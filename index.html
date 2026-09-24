@@ -1,2 +1,153 @@
-<h1>Hola Mundo</h1>
-<h1>Hola soy aleja</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechNova | Contáctanos</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons (opcional, para la lupa de búsqueda) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-technova">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="#">TECHNOVA</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Noticias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Favoritos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-semibold text-decoration-underline" href="#" aria-current="page">Contacto</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <form class="d-flex" role="search">
+                <input class="form-control form-control-sm search-input" type="search" placeholder="Buscar..." aria-label="Buscar">
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+  <main class="container py-5">
+
+    <!-- Encabezado de sección -->
+    <div class="text-center mb-4">
+      <h1 class="fw-bold">Contáctanos</h1>
+      <p class="text-muted">¿Tienes Dudas o quieres compartir una noticia? Escríbenos</p>
+    </div>
+
+    <!-- Formulario -->
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+        <div class="card contact-card p-4 p-md-5 mb-4">
+          <form id="contactForm" novalidate>
+
+            <!-- Nombre -->
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+              <div class="error-message" id="errorNombre"></div>
+            </div>
+
+            <!-- Correo Electrónico -->
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo Electrónico <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="correo" name="correo" placeholder="">
+              <div class="error-message" id="errorCorreo"></div>
+            </div>
+
+            <!-- Asunto (opcional) -->
+            <div class="mb-3">
+              <label for="asunto" class="form-label">Asunto</label>
+              <input type="text" class="form-control" id="asunto" name="asunto" placeholder="">
+            </div>
+
+            <!-- Mensaje -->
+            <div class="mb-4">
+              <label for="mensaje" class="form-label">Mensaje <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="mensaje" name="mensaje" rows="6" placeholder=""></textarea>
+              <div class="error-message" id="errorMensaje"></div>
+            </div>
+
+            <!-- Botón enviar -->
+            <button type="submit" class="btn btn-enviar w-100">Enviar Mensaje</button>
+
+            <!-- Mensaje de éxito -->
+            <div class="success-message text-center mt-3" id="successMessage">
+              ✔ [Estado] * Tu mensaje ha sido enviado correctamente
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Información adicional de contacto -->
+        <div class="row text-center info-adicional">
+          <div class="col-md-4 mb-3">
+            <i class="bi bi-envelope-fill fs-4"></i>
+            <p class="mb-0 fw-semibold">Correo</p>
+            <p class="text-muted small">contacto@technova.com</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <i class="bi bi-telephone-fill fs-4"></i>
+            <p class="mb-0 fw-semibold">Teléfono</p>
+            <p class="text-muted small">+57 300 123 4567</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <i class="bi bi-geo-alt-fill fs-4"></i>
+            <p class="mb-0 fw-semibold">Ubicación</p>
+            <p class="text-muted small">Medellín, Colombia</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-technova py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start gap-3">
+      <div>
+        <h5 class="mb-0 fw-bold">TechNova</h5>
+        <small>Plataforma de Noticias Tecnológicas</small>
+      </div>
+      <div class="text-md-end">
+        <small class="d-block">Enlaces: Inicio | Noticias | Contacto</small>
+        <small class="d-block">contacto@technova.com</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script propio -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* =========================================================
+   VARIABLES DE COLOR - TechNova
+   ========================================================= */
+:root {
+  --technova-primary: #5B5BB6;   /* Azul violáceo del header/footer */
+  --technova-primary-dark: #4a4a9a;
+  --technova-btn: #1E2A5E;       /* Azul oscuro del botón "Enviar Mensaje" */
+  --technova-btn-hover: #16204a;
+  --technova-card-bg: #f5f5f5;   /* Fondo gris claro del formulario */
+  --technova-success: #1e7e34;
+  --technova-error: #d9363e;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #ffffff;
+  color: #2b2b2b;
+}
+
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+.navbar-technova {
+  background-color: var(--technova-primary);
+}
+
+.navbar-technova .navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.navbar-technova .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-technova .nav-link:hover,
+.navbar-technova .nav-link:focus {
+  color: #ffffff;
+}
+
+.navbar-technova .nav-link.active {
+  color: #ffffff;
+}
+
+.search-input {
+  width: 140px;
+  border-radius: 4px;
+  border: none;
+}
+
+/* =========================================================
+   ENCABEZADO DE SECCIÓN
+   ========================================================= */
+main h1 {
+  color: #1a1a1a;
+}
+
+/* =========================================================
+   TARJETA DEL FORMULARIO
+   ========================================================= */
+.contact-card {
+  background-color: var(--technova-card-bg);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card .form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.contact-card .form-control {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.contact-card .form-control:focus {
+  border-color: var(--technova-primary);
+  box-shadow: 0 0 0 0.2rem rgba(91, 91, 182, 0.25);
+}
+
+/* Botón de envío */
+.btn-enviar {
+  background-color: var(--technova-btn);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-enviar:hover {
+  background-color: var(--technova-btn-hover);
+  color: #ffffff;
+}
+
+/* =========================================================
+   MENSAJES DE VALIDACIÓN Y ESTADO
+   ========================================================= */
+.error-message {
+  color: var(--technova-error);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+  min-height: 1.1rem;
+}
+
+.success-message {
+  color: var(--technova-success);
+  font-weight: 600;
+  display: none; /* Oculto por defecto, se muestra vía JS */
+}
+
+/* =========================================================
+   INFORMACIÓN ADICIONAL DE CONTACTO
+   ========================================================= */
+.info-adicional i {
+  color: var(--technova-primary);
+  margin-bottom: 0.3rem;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer-technova {
+  background-color: var(--technova-primary);
+  color: #ffffff;
+}
+
+.footer-technova small {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   RESPONSIVE AJUSTES
+   ========================================================= */
+@media (max-width: 991px) {
+  .search-input {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
