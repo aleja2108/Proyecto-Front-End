@@ -141,3 +141,235 @@ main h1 {
     margin-top: 0.5rem;
   }
 }
+
+/* =========================================================
+   VARIABLES DE COLOR - TechNova
+   ========================================================= */
+:root {
+  --technova-primary: #5B5BB6;   
+  --technova-primary-dark: #4a4a9a;
+  --technova-btn: #1E2A5E;       
+  --technova-btn-hover: #16204a;
+  --technova-card-bg: #f5f5f5;   
+  --technova-success: #1e7e34;
+  --technova-error: #d9363e;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #ffffff;
+  color: #2b2b2b;
+}
+
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+.navbar-technova {
+  background-color: var(--technova-primary);
+}
+
+.navbar-technova .navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.navbar-technova .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-technova .nav-link:hover,
+.navbar-technova .nav-link:focus {
+  color: #ffffff;
+}
+
+.navbar-technova .nav-link.active {
+  color: #ffffff;
+}
+
+.search-input {
+  width: 140px;
+  border-radius: 4px;
+  border: none;
+}
+
+/* =========================================================
+   ENCABEZADO DE SECCIÓN
+   ========================================================= */
+main h1 {
+  color: #1a1a1a;
+}
+
+/* =========================================================
+   TARJETA DEL FORMULARIO
+   ========================================================= */
+.contact-card {
+  background-color: var(--technova-card-bg);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card .form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.contact-card .form-control {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.contact-card .form-control:focus {
+  border-color: var(--technova-primary);
+  box-shadow: 0 0 0 0.2rem rgba(91, 91, 182, 0.25);
+}
+
+/* Botón de envío */
+.btn-enviar {
+  background-color: var(--technova-btn);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-enviar:hover {
+  background-color: var(--technova-btn-hover);
+  color: #ffffff;
+}
+
+/* =========================================================
+   MENSAJES DE VALIDACIÓN Y ESTADO
+   ========================================================= */
+.error-message {
+  color: var(--technova-error);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+  min-height: 1.1rem;
+}
+
+.success-message {
+  color: var(--technova-success);
+  font-weight: 600;
+  display: none; 
+}
+
+/* =========================================================
+   INFORMACIÓN ADICIONAL DE CONTACTO
+   ========================================================= */
+.info-adicional i {
+  color: var(--technova-primary);
+  margin-bottom: 0.3rem;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer-technova {
+  background-color: var(--technova-primary);
+  color: #ffffff;
+}
+
+.footer-technova small {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   RESPONSIVE AJUSTES
+   ========================================================= */
+@media (max-width: 991px) {
+  .search-input {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+/* =========================================================
+   PÁGINA DE INICIO (HOME) - ESTILOS ESPECÍFICOS
+   ========================================================= */
+
+/* Sección Hero */
+.hero-section {
+  background-color: #e2e4f3; 
+  padding: 1rem 1rem;
+}
+
+.hero-title {
+  color: var(--technova-primary);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.hero-subtitle {
+  color: var(--technova-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.btn-hero {
+  background-color: var(--technova-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0;
+  transition: background-color 0.2s;
+}
+
+.btn-hero:hover {
+  background-color: var(--technova-primary-dark);
+  color: #ffffff;
+}
+
+/* Sección Noticias Destacadas */
+.section-title {
+  color: var(--technova-primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.news-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card-img-placeholder {
+  background-color: #d1d4ec;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.news-card .card-title {
+  color: var(--technova-primary);
+}
+
+.btn-ver-mas {
+  background-color: var(--technova-primary);
+  color: #ffffff;
+  border-radius: 0;
+  font-weight: 600;
+}
+
+.btn-ver-mas:hover {
+  background-color: var(--technova-primary-dark);
+  color: #ffffff;
+}
+
+/* Banner de Testimonio */
+.testimonial-banner {
+  background-color: #e2e4f3;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.testimonial-banner h3 {
+  color: #1a1a1a;
+  font-size: 1.4rem;
+}
