@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechNova | Inicio</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-technova">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="#">TECHNOVA</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <!-- Se movió la clase active y text-decoration-underline a Inicio -->
+              <a class="nav-link active fw-semibold text-decoration-underline" href="home.html" aria-current="page">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Noticias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Favoritos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Contacto</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <form class="d-flex" role="search">
+                <input class="form-control form-control-sm search-input" type="search" placeholder="Buscar..." aria-label="Buscar">
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+  <main>
+    <!-- Sección Hero (Banner principal) -->
+    <section class="hero-section text-center">
+      <div class="container">
+        <h1 class="hero-title mb-3">Las últimas noticias de tecnología</h1>
+        <p class="hero-subtitle mb-4">Explora, guarda y comparte las noticias tecnológicas más relevantes</p>
+        <a href="#" class="btn btn-hero btn-lg px-4 fs-6">Explorar Noticias</a>
+      </div>
+    </section>
+
+    <!-- Sección Noticias Destacadas -->
+    <section class="container py-5">
+      <h2 class="section-title mb-4">Noticias Destacadas</h2>
+      <div class="row g-4">
+        
+        <div class="col-md-4">
+          <div class="card h-100 news-card">
+            <div class="card-img-placeholder">
+              <span>IMAGE</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Título de la Noticia</h5>
+              <p class="card-text text-muted small">Descripción breve de la noticia...</p>
+              <a href="#" class="btn btn-ver-mas btn-sm px-4">Ver Mas</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 news-card">
+            <div class="card-img-placeholder">
+              <span>IMAGE</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Título de la Noticia</h5>
+              <p class="card-text text-muted small">Descripción breve de la noticia...</p>
+              <a href="#" class="btn btn-ver-mas btn-sm px-4">Ver Mas</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 news-card">
+            <div class="card-img-placeholder">
+              <span>IMAGE</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Título de la Noticia</h5>
+              <p class="card-text text-muted small">Descripción breve de la noticia...</p>
+              <a href="#" class="btn btn-ver-mas btn-sm px-4">Ver Mas</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sección Testimonio / Informativa -->
+    <section class="container pb-5">
+      <div class="testimonial-banner rounded">
+        <h3 class="fw-bold mb-2">“TechNova me mantiene siempre informado” - Usuario</h3>
+        <p class="text-muted mb-0">Sección informativa / testimonios de la comunidad</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-technova py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start gap-3">
+      <div>
+        <h5 class="mb-0 fw-bold">TechNova</h5>
+        <small>Plataforma de Noticias Tecnológicas</small>
+      </div>
+      <div class="text-md-end">
+        <small class="d-block">Enlaces: Inicio | Noticias | Contacto</small>
+        <small class="d-block">contacto@technova.com</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
