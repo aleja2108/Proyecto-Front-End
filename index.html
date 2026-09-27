@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechNova | Contáctanos</title>
+  <title>TechNova | Inicio</title>
 
   <!-- Bootstrap 5 CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Bootstrap Icons (opcional, para la lupa de búsqueda) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <!-- Estilos propios -->
   <link rel="stylesheet" href="style.css">
@@ -20,7 +17,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark navbar-technova">
       <div class="container-fluid px-4">
-        <a class="navbar-brand fw-bold" href="#">TECHNOVA</a>
+        <a class="navbar-brand fw-bold" href="Index.html">TECHNOVA</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
@@ -30,19 +27,19 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav align-items-lg-center gap-lg-2">
             <li class="nav-item">
-              <a class="nav-link" href="home.html">Inicio</a>
+              <a class="nav-link active fw-semibold text-decoration-underline" href="Index.html" aria-current="page">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Noticias</a>
+              <a class="nav-link" href="listadoNoticias.html">Noticias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Favoritos</a>
+              <a class="nav-link" href="favoritos.html">Favoritos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Acerca de</a>
+              <a class="nav-link" href="Acercade.html">Acerca de</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active fw-semibold text-decoration-underline" href="#" aria-current="page">Contacto</a>
+              <a class="nav-link" href="Contacto.html">Contacto</a>
             </li>
             <li class="nav-item ms-lg-3">
               <form class="d-flex" role="search">
@@ -56,79 +53,71 @@
   </header>
 
   <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
-  <main class="container py-5">
+  <main>
+    <!-- Sección Hero (Banner principal) -->
+    <section class="hero-section text-center">
+      <div class="container">
+        <h1 class="hero-title mb-3">Las últimas noticias de tecnología</h1>
+        <p class="hero-subtitle mb-4">Explora, guarda y comparte las noticias tecnológicas más relevantes</p>
+        <a href="listadoNoticias.html" class="btn btn-hero btn-lg px-4 fs-6">Explorar Noticias</a>
+      </div>
+    </section>
 
-    <!-- Encabezado de sección -->
-    <div class="text-center mb-4">
-      <h1 class="fw-bold">Contáctanos</h1>
-      <p class="text-muted">¿Tienes Dudas o quieres compartir una noticia? Escríbenos</p>
-    </div>
-
-    <!-- Formulario -->
-    <div class="row justify-content-center">
-      <div class="col-lg-7 col-md-9">
-        <div class="card contact-card p-4 p-md-5 mb-4">
-          <form id="contactForm" novalidate>
-
-            <!-- Nombre -->
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
-              <div class="error-message" id="errorNombre"></div>
+    <!-- Sección Noticias Destacadas -->
+    <section class="container py-5">
+      <h2 class="section-title mb-4">Noticias Destacadas</h2>
+      <div class="row g-4">
+        
+        <div class="col-md-4">
+          <div class="card h-100 news-card">
+            <div class="card-img-placeholder">
+              <span>IMAGE</span>
             </div>
-
-            <!-- Correo Electrónico -->
-            <div class="mb-3">
-              <label for="correo" class="form-label">Correo Electrónico <span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="correo" name="correo" placeholder="">
-              <div class="error-message" id="errorCorreo"></div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Título de la Noticia</h5>
+              <p class="card-text text-muted small">Descripción breve de la noticia...</p>
+              <a href="listadoNoticias.html" class="btn btn-ver-mas btn-sm px-4">Ver Mas</a>
             </div>
-
-            <!-- Asunto (opcional) -->
-            <div class="mb-3">
-              <label for="asunto" class="form-label">Asunto</label>
-              <input type="text" class="form-control" id="asunto" name="asunto" placeholder="">
-            </div>
-
-            <!-- Mensaje -->
-            <div class="mb-4">
-              <label for="mensaje" class="form-label">Mensaje <span class="text-danger">*</span></label>
-              <textarea class="form-control" id="mensaje" name="mensaje" rows="6" placeholder=""></textarea>
-              <div class="error-message" id="errorMensaje"></div>
-            </div>
-
-            <!-- Botón enviar -->
-            <button type="submit" class="btn btn-enviar w-100">Enviar Mensaje</button>
-
-            <!-- Mensaje de éxito -->
-            <div class="success-message text-center mt-3" id="successMessage">
-              ✔ [Estado] * Tu mensaje ha sido enviado correctamente
-            </div>
-
-          </form>
+          </div>
         </div>
 
-        <!-- Información adicional de contacto -->
-        <div class="row text-center info-adicional">
-          <div class="col-md-4 mb-3">
-            <i class="bi bi-envelope-fill fs-4"></i>
-            <p class="mb-0 fw-semibold">Correo</p>
-            <p class="text-muted small">contacto@technova.com</p>
+        <div class="col-md-4">
+          <div class="card h-100 news-card">
+            <div class="card-img-placeholder">
+              <span>IMAGE</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Título de la Noticia</h5>
+              <p class="card-text text-muted small">Descripción breve de la noticia...</p>
+              <a href="listadoNoticias.html" class="btn btn-ver-mas btn-sm px-4">Ver Mas</a>
+            </div>
           </div>
-          <div class="col-md-4 mb-3">
-            <i class="bi bi-telephone-fill fs-4"></i>
-            <p class="mb-0 fw-semibold">Teléfono</p>
-            <p class="text-muted small">+57 300 123 4567</p>
-          </div>
-          <div class="col-md-4 mb-3">
-            <i class="bi bi-geo-alt-fill fs-4"></i>
-            <p class="mb-0 fw-semibold">Ubicación</p>
-            <p class="text-muted small">Medellín, Colombia</p>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 news-card">
+            <div class="card-img-placeholder">
+              <span>IMAGE</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Título de la Noticia</h5>
+              <p class="card-text text-muted small">Descripción breve de la noticia...</p>
+              <a href="listadoNoticias.html" class="btn btn-ver-mas btn-sm px-4">Ver Mas</a>
+            </div>
           </div>
         </div>
 
       </div>
-    </div>
+    </section>
+
+    <!-- Sección Testimonio / Informativa -->
+    <section class="container pb-5">
+      <div class="testimonial-banner rounded">
+        <h3 class="fw-bold mb-2">“TechNova me mantiene siempre informado” - Usuario</h3>
+        <p class="text-muted mb-0">Sección informativa / testimonios de la comunidad</p>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===================== FOOTER ===================== -->
@@ -145,9 +134,6 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script propio -->
-  <script src="script.js"></script>
 </body>
 </html>

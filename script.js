@@ -2,115 +2,168 @@
 // VALIDACIÓN DEL FORMULARIO DE CONTACTO - TechNova
 // =========================================================
 
-// 1. Referencias a los elementos del DOM
 const contactForm = document.getElementById('contactForm');
 
-const nombreInput = document.getElementById('nombre');
-const correoInput = document.getElementById('correo');
-const mensajeInput = document.getElementById('mensaje');
+if (contactForm) {
+  const nombreInput = document.getElementById('nombre');
+  const correoInput = document.getElementById('correo');
+  const mensajeInput = document.getElementById('mensaje');
 
-const errorNombre = document.getElementById('errorNombre');
-const errorCorreo = document.getElementById('errorCorreo');
-const errorMensaje = document.getElementById('errorMensaje');
+  const errorNombre = document.getElementById('errorNombre');
+  const errorCorreo = document.getElementById('errorCorreo');
+  const errorMensaje = document.getElementById('errorMensaje');
 
-const successMessage = document.getElementById('successMessage');
+  const successMessage = document.getElementById('successMessage');
 
-// 2. Expresión regular para validar el formato de correo electrónico
-//    Estructura esperada: usuario@dominio.extension
-const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// 3. Capturamos el evento 'submit' del formulario
-contactForm.addEventListener('submit', function (event) {
-  // Evitamos que la página se recargue al enviar el formulario
-  event.preventDefault();
+  contactForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let formularioValido = true;
 
-  // Bandera que indica si el formulario es válido en su totalidad
-  let formularioValido = true;
-
-  // ---------------------------------------------------------
-  // Reiniciamos los mensajes de error y de éxito en cada envío
-  // ---------------------------------------------------------
-  limpiarErrores();
-  ocultarMensajeExito();
-
-  // ---------------------------------------------------------
-  // Validación: Nombre no debe estar vacío
-  // ---------------------------------------------------------
-  const nombre = nombreInput.value.trim();
-  if (nombre === '') {
-    mostrarError(errorNombre, 'El nombre es obligatorio.');
-    formularioValido = false;
-  }
-
-  // ---------------------------------------------------------
-  // Validación: Correo no debe estar vacío y debe tener formato válido
-  // ---------------------------------------------------------
-  const correo = correoInput.value.trim();
-  if (correo === '') {
-    mostrarError(errorCorreo, 'El correo electrónico es obligatorio.');
-    formularioValido = false;
-  } else if (!regexCorreo.test(correo)) {
-    mostrarError(errorCorreo, 'Debe ser un correo válido (ej. usuario@dominio.com)');
-    formularioValido = false;
-  }
-
-  // ---------------------------------------------------------
-  // Validación: Mensaje no debe estar vacío
-  // (El campo "Asunto" es opcional, por lo tanto no se valida)
-  // ---------------------------------------------------------
-  const mensaje = mensajeInput.value.trim();
-  if (mensaje === '') {
-    mostrarError(errorMensaje, 'El mensaje es obligatorio.');
-    formularioValido = false;
-  }
-
-  // ---------------------------------------------------------
-  // Si todas las validaciones pasaron correctamente:
-  // ---------------------------------------------------------
-  if (formularioValido) {
-    // Limpiamos cualquier mensaje de error remanente
     limpiarErrores();
+    ocultarMensajeExito();
 
-    // Mostramos el mensaje de éxito en verde
-    mostrarMensajeExito();
+    const nombre = nombreInput.value.trim();
+    if (nombre === '') {
+      mostrarError(errorNombre, 'El nombre es obligatorio.');
+      formularioValido = false;
+    }
 
-    // Reseteamos el formulario (deja los campos vacíos)
-    contactForm.reset();
+    const correo = correoInput.value.trim();
+    if (correo === '') {
+      mostrarError(errorCorreo, 'El correo electrónico es obligatorio.');
+      formularioValido = false;
+    } else if (!regexCorreo.test(correo)) {
+      mostrarError(errorCorreo, 'Debe ser un correo válido (ej. usuario@dominio.com)');
+      formularioValido = false;
+    }
+
+    const mensaje = mensajeInput.value.trim();
+    if (mensaje === '') {
+      mostrarError(errorMensaje, 'El mensaje es obligatorio.');
+      formularioValido = false;
+    }
+
+    if (formularioValido) {
+      limpiarErrores();
+      mostrarMensajeExito();
+      contactForm.reset();
+    }
+  });
+
+  function mostrarError(elemento, texto) {
+    elemento.textContent = texto;
   }
-});
+
+  function limpiarErrores() {
+    errorNombre.textContent = '';
+    errorCorreo.textContent = '';
+    errorMensaje.textContent = '';
+  }
+
+  function mostrarMensajeExito() {
+    successMessage.style.display = 'block';
+  }
+
+  function ocultarMensajeExito() {
+    successMessage.style.display = 'none';
+  }
+}
 
 // =========================================================
-// FUNCIONES AUXILIARES
+// LÓGICA DEL CATÁLOGO DE NOTICIAS (LISTADO)
 // =========================================================
 
-/**
- * Muestra un mensaje de error dentro del contenedor indicado.
- * @param {HTMLElement} elemento - Contenedor donde se mostrará el error.
- * @param {string} texto - Mensaje de error a mostrar.
- */
-function mostrarError(elemento, texto) {
-  elemento.textContent = texto;
-}
+const noticias = [
+  { id: 1, titulo: "Noticia 1", desc: "Descripción breve ...", categoria: "tecnologia" },
+  { id: 2, titulo: "Noticia 2", desc: "Descripción breve ...", categoria: "ciencia" },
+  { id: 3, titulo: "Noticia 3", desc: "Descripción breve ...", categoria: "videojuegos" },
+  { id: 4, titulo: "Noticia 4", desc: "Descripción breve ...", categoria: "tecnologia" },
+  { id: 5, titulo: "Noticia 5", desc: "Descripción breve ...", categoria: "ciencia" },
+  { id: 6, titulo: "Noticia 6", desc: "Descripción breve ...", categoria: "videojuegos" },
+  { id: 7, titulo: "Noticia 7", desc: "Descripción breve ...", categoria: "tecnologia" },
+  { id: 8, titulo: "Noticia 8", desc: "Descripción breve ...", categoria: "ciencia" },
+  { id: 9, titulo: "Noticia 9", desc: "Descripción breve ...", categoria: "videojuegos" }
+];
 
-/**
- * Limpia todos los mensajes de error del formulario.
- */
-function limpiarErrores() {
-  errorNombre.textContent = '';
-  errorCorreo.textContent = '';
-  errorMensaje.textContent = '';
-}
+let paginaActual = 1;
+const itemsPorPagina = 6;
+let filtroTexto = "";
+let filtroCategoria = "todas";
 
-/**
- * Muestra el mensaje de confirmación de envío exitoso.
- */
-function mostrarMensajeExito() {
-  successMessage.style.display = 'block';
-}
+const grid = document.getElementById('newsGrid');
+const paginationContainer = document.getElementById('pagination');
+const searchInput = document.getElementById('searchInput');
+const categorySelect = document.getElementById('categorySelect');
 
-/**
- * Oculta el mensaje de confirmación de envío exitoso.
- */
-function ocultarMensajeExito() {
-  successMessage.style.display = 'none';
+if (grid) {
+  function renderizarNoticias() {
+    const noticiasFiltradas = noticias.filter(noticia => {
+      const coincideTexto = noticia.titulo.toLowerCase().includes(filtroTexto.toLowerCase());
+      const coincideCategoria = filtroCategoria === "todas" || noticia.categoria === filtroCategoria;
+      return coincideTexto && coincideCategoria;
+    });
+
+    const totalPaginas = Math.ceil(noticiasFiltradas.length / itemsPorPagina);
+    if (paginaActual > totalPaginas && totalPaginas > 0) paginaActual = totalPaginas;
+    if (paginaActual < 1) paginaActual = 1;
+
+    const inicio = (paginaActual - 1) * itemsPorPagina;
+    const fin = inicio + itemsPorPagina;
+    const noticiasPaginadas = noticiasFiltradas.slice(inicio, fin);
+
+    grid.innerHTML = "";
+    paginationContainer.innerHTML = "";
+
+    if (noticiasPaginadas.length === 0) {
+      grid.innerHTML = "<p>No se encontraron noticias.</p>";
+    } else {
+      noticiasPaginadas.forEach(noticia => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+          <div class="card-image">IMAGE</div>
+          <div class="card-content">
+            <h3>${noticia.titulo}</h3>
+            <p>${noticia.desc}</p>
+            <button class="btn-ver-mas">Ver Mas</button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    if (totalPaginas > 1) {
+      for (let i = 1; i <= totalPaginas; i++) {
+        const btn = document.createElement('button');
+        btn.classList.add('page-btn');
+        if (i === paginaActual) btn.classList.add('active');
+        btn.textContent = i;
+        btn.addEventListener('click', () => {
+          paginaActual = i;
+          renderizarNoticias();
+        });
+        paginationContainer.appendChild(btn);
+      }
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      filtroTexto = e.target.value;
+      paginaActual = 1;
+      renderizarNoticias();
+    });
+  }
+
+  if (categorySelect) {
+    categorySelect.addEventListener('change', (e) => {
+      filtroCategoria = e.target.value;
+      paginaActual = 1;
+      renderizarNoticias();
+    });
+  }
+
+  renderizarNoticias();
 }
